@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}">
+
+</head>
+
+<body>
+	<!-- Navbar Start -->
+	<div th:replace="~{base::navbar}"></div>
+	<!-- Navbar End -->
+
+
+	<!-- Page Header Start -->
+	<div th:replace="~{base :: header(text='Success')}"></div>
+	<!-- Page Header End -->
+
+
+	<!-- Success Start -->
+	<div class="container-fluid py-5">
+		<div class="d-flex justify-content-center align-items-center"
+			style="min-height: 80vh;">
+			<div class="card shadow-lg border-0 rounded-3" style="width: 40rem;">
+				<div class="card-body">
+					<h4 class="card-title text-primary mb-3 text-center">Booking Detail</h4>
+					<hr	style="border-top: 2px solid brown; width: 100px; margin: 0 auto 1rem auto;">
+					<table class="table table-borderless" style="text-align: left;">
+						<tbody>
+							<tr>
+								<th style="width: 16rem;">ID:</th>
+								<td th:text="${booked.id}"></td>
+							</tr>
+							<tr>
+								<th style="width: 16rem;">Name:</th>
+								<td th:text="${booked.name}"></td>
+							</tr>
+							<tr>
+								<th>Phone:</th>
+								<td th:text="${booked.phoneNumber}"></td>
+							</tr>
+							<tr>
+								<th>Email:</th>
+								<td th:text="${booked.email}"></td>
+							</tr>
+							<tr>
+								<th>Date:</th>
+								<td th:text="${booked.date}"></td>
+							</tr>
+							<tr>
+								<th>Time:</th>
+								<td th:text="${booked.time}"></td>
+							</tr>
+							<tr>
+								<th>Persons:</th>
+								<td th:text="${booked.person}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="card-footer text-white text-center"
+					style="background-color: #46230a;">Your booking has been
+					successfully saved!</div>
+			</div>
+		</div>
+	</div>
+	<!-- Success End -->
+
+
+	<!-- Footer Start -->
+	<div th:replace="~{base :: footer}"></div>
+	<!-- Footer End -->
+
+
+
+	<!-- Back to Top -->
+	<div th:replace="~{base :: script}"></div>
+</body>
+
+</html>
