@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: coffee-shop-telegram-bot
+    env: docker
+    docker:
+      dockerfile: Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: TELEGRAM_BOT_TOKEN
+        fromSecret: telegram_bot_token
+      - key: TELEGRAM_CHAT_ID
+        fromSecret: telegram_chat_id
+      # Optional: You can also set database credentials as secrets
+      - key: DATABASE_URL
+        value: jdbc:postgresql://dpg-d5k7fa9b44c73a8f4qp-a.oregon-postgres.render.com:5432/sdb
+      - key: DATABASE_USERNAME
+        value: sdb_user
+      - key: DATABASE_PASSWORD
+        fromSecret: database_password
